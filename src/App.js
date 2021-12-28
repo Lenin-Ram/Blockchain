@@ -8,8 +8,8 @@ class App extends Component {
       return { [name]: value}
     });
   };
-  
-render() {
+
+render() { 
   return (
     <div>
       <pre>{JSON.stringify(this.state, replacer:null, space:2)}</pre>
