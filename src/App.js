@@ -1,11 +1,12 @@
-import react, {Component} from "react";
+import React, {Component} from "react";
 import "./css/index.css";
 
 class App extends Component {
-  state = {nombre: "", email: "", esAdmin:""};
+  state = {nombre: "", email: "", esAdmin:"", genero:""};
+
   valueToState = ({name, value, checked, type}) => {
     this.setState(state: () => {
-      return { [name]: value}
+      return { [name]: type == "checkbox" ? checked : value};
     });
   };
 
@@ -31,6 +32,21 @@ render() {
         <label>Es Administrador?
         <input type="checkbox" name="esAdmin"/>
         </label>
+        <legend>Genero</legend>
+        <label>
+          Masculino
+          <input 
+          type="radio"
+          name="genero"
+          value={'m'}/>
+          </label>
+          <label>
+          Femenino
+          <input 
+          type="radio"
+          name="genero"
+          value={'f'}/>
+          </label>
       </form>
     </div>
   );
