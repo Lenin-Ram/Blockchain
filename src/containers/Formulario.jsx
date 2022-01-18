@@ -1,36 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import '../assets/style/formulario.scss';
+import {FormGroup, Col, Row, Label, Button, Form, Input} from 'reactstrap';
 
 const Formulario = () => {
+
+          let navigate = useNavigate();
+          const [form, setValues] = useState({
+                    
+          });
+
+          const handleInput = event => {
+                    setValues({
+                              ...form,
+                              [event.target.name]:event.target.value
+                    })
+          }
+
+          const handleSubmit = event => {
+                    event.preventDefault();
+                    console.log(form);
+                    navigate('/estadisticas');
+          }
+
           return(
+
+          <Form onSubmit={handleSubmit}>
+                    <Row form>
+                              <Col md={6}>
+                               <FormGroup>
+                               <Label className='title'>
+                               Crouwdfundig application
+                               </Label>
+                               <Input
+                                        id="text"
+                                        name="text"
+                                        placeholder="Contract Address"
+                                        type="submmit"
+                                        onChange={handleInput}
+                              />
+                             
+                              </FormGroup>
+                              </Col>
+                    
+                    </Row>
+          
+          
+          <Button type='submit' className='button'>
+          Submmit
+          </Button>
+          </Form>
          
-              <section className="register__container">
-               
-                <h2>Crouwdfundig application</h2>
-                <form className="register__container--form" >
-                  
-                  <input 
-                  name='name'
-                  className="input" 
-                  type="text"
-                  placeholder="Nombre"
-                 
-                   />
-                  
-
-                  <input 
-                  name='text'
-                  className="input" 
-                  type="text" 
-                  placeholder="Correo"
-              
-                  />
-                  <button className="button">Submmit</button>
-                  
-                  </form>
-
-           
-            </section>
           
  )
 }

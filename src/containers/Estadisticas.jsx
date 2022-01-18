@@ -1,15 +1,17 @@
 import React from 'react';
-import { Table } from 'reactstrap';
+import { Table, Button} from 'reactstrap';
 
 const Estadistica = () => {
 
  return( 
           <div>   
-          <button className='button'> 
+                              
+           <Button type='submit' className='button'>
                     <a href="/">Home</a>
-          </button>
+          </Button>
 
-                    <Table bordered>
+          
+           <Table bordered>
                      
                     <thead>
                               <tr>
@@ -83,7 +85,9 @@ const Estadistica = () => {
                     
                     <tr>
                     <div>
-                    <button className="button">Contribute</button>
+                    <Button type='submit' className='button'>
+          Contribute
+          </Button>
                     <input  
                     name='name'
                     className="input" 
