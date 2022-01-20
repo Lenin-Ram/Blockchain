@@ -1,12 +1,14 @@
 import React from 'react';
 import Search from '../components/Search';
 import swal from 'sweetalert';
+import { Button } from 'reactstrap';
 
 
 
 const Home = () => {
 
   const HandleClick = () =>{ 
+    
     swal("A wild Pikachu appeared! What do you want to do?", {
       buttons: {
         cancel: "Run away!",
@@ -39,8 +41,13 @@ const Home = () => {
      
       <Search />
      
-     <button onClick={()=>HandleClick()}>Click me</button>
      
+      <div style={{
+            display: 'flex', justifyContent: 'center'
+        }}>
+     <Button 
+     onClick={()=>HandleClick()}>Click me</Button>
+     </div>
      
     </>
   
