@@ -1,10 +1,25 @@
 import React from 'react';
 import { Table, Button} from 'reactstrap';
+import  swal  from 'sweetalert';
+
+
+
+
 
 const Estadistica = () => {
 
+          const HandleClick = () => {
+                    
+                    swal(" Contribute:", {
+                              content: "input",
+                            })
+                            .then((value) => {
+                              swal(`Contribute: ${value}`);
+                            });
+
+                  }
  return( 
-          <div>   
+          <>   
                               
            <Button type='submit' className='button'>
                     <a href="/">Home</a>
@@ -82,28 +97,40 @@ const Estadistica = () => {
                     0
                     </td>
                     </tr>
-                    
+
+
                     <tr>
-                    <div>
-                    <Button type='submit' className='button'>
-          Contribute
-          </Button>
-                    <input  
+                    <td>
+                    
+                    
+                    <Button onClick={()=>HandleClick()} type='submit' className='button'>
+                               Contribute
+                    </Button>
+
+                    {/* <input  
                     name='name'
                     className="input" 
                     type="text"
                     placeholder="1"
-                     />
-                     </div>
+                     /> */}
+
+                    
+                    
+                     </td>
                      </tr>
+
+                     
 
                     </tbody>
                    </Table>
+
+                   
                    
                     
-  </div>
+  </>
 
 
   );
+ 
  }
 export default Estadistica;
